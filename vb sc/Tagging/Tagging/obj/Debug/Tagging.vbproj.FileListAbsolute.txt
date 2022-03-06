@@ -1,0 +1,11 @@
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\bin\Debug\Tagging.exe.config
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\bin\Debug\Tagging.exe
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\bin\Debug\Tagging.pdb
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\bin\Debug\Tagging.xml
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\Tagging.vbprojResolveAssemblyReference.cache
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\Tagging.vbproj.GenerateResource.Cache
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\Tagging.exe
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\Tagging.xml
+C:\Users\Karthi\Documents\Visual Studio 2015\Projects\Tagging\Tagging\obj\Debug\Tagging.pdb

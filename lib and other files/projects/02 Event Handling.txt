@@ -1,0 +1,463 @@
+interface Mail{
+    void registration();
+    void validation();
+}
+
+class Yahoo implements Mail{
+
+ 	public void registration(){
+  		System.out.println("  Yahoo registration");    
+ 	}
+
+ 	public void validation(){
+ 		System.out.println("  Yahoo validation");    
+ 	}
+}
+
+class Demo7{
+    public static void main(String args[]){
+
+
+
+
+        Mail mail=new Yahoo();
+
+        mail.registration();
+        mail.validation();
+
+        System.out.println("==================================================");
+
+        new TestClass2().test();
+
+    }
+}
+
+class TestClass2{
+    void test(){
+
+        Mail m1=new Mail()
+        {
+
+                public void registration(){
+                    System.out.println("  Anonymous class registration");
+                }
+
+                public void validation(){
+                    System.out.println("  Anonymous class validation");
+                }
+            
+        };
+
+        m1.registration();
+        m1.validation();
+
+    }
+}
+
+
+
+=========================================================================================
+interface Mail
+{
+ 	void register();
+}
+
+class A{
+
+    void test(Mail m){
+
+        m.register();
+
+    }
+}
+
+class Yahoo implements Mail{
+
+    public void register() {
+        System.out.println(" Yahoo Registration ");
+    }
+
+}
+
+class Demo2
+{
+ 	public static void main(String aa[])
+ 	{
+
+            new A().test(new Yahoo());
+
+
+            new A().test(new Mail()
+            {
+                public void register() {
+                    System.out.println(" Anonymous Class Registration ");
+                }
+
+            });
+ 	}
+}
+
+
+========================================================================================
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class Demo3 extends Frame{
+
+    Button b1,b2;
+    Demo3(){
+        setLayout(null);
+
+        b1=new Button("Click");
+        b2=new Button("Submit");
+
+        b1.addActionListener(new ActionListener(){
+
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+
+        b1.setBounds(100,100,200,30);
+        b2.setBounds(100,160,200,30);
+
+        add(b1);
+        add(b2);
+
+        setBackground(Color.pink);
+        setSize(500,500);
+        setVisible(true);
+    }
+    public static void main(String aa[]){
+        new Demo3();
+    }
+}
+================================================================================
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class Demo3 extends Frame{
+
+    Button b1,b2;
+    Demo3(){
+        setLayout(null);
+
+        b1=new Button("Click");
+        b2=new Button("Submit");
+
+
+        b1.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                setBackground(Color.orange);
+            }
+        });
+
+        b2.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                setBackground(Color.GREEN);
+            }
+        });
+
+
+
+        b1.setBounds(100,100,200,30);
+        b2.setBounds(100,160,200,30);
+
+        add(b1);
+        add(b2);
+
+        setBackground(Color.pink);
+        setSize(500,500);
+        setVisible(true);
+    }
+    public static void main(String aa[]){
+        new Demo3();
+    }
+}
+========================================================================================
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.TextEvent;
+import java.awt.event.TextListener;
+
+class Demo4 extends Frame{
+     Label l1,l2;
+     TextField t1,t2;
+     Button b1;
+     Demo4(){
+         setLayout(null);
+
+         l1=new Label("Username");
+         l2=new Label("Password");
+
+
+         t1=new TextField();
+         t2=new TextField();
+
+         t1.addTextListener(new TextListener() {
+
+            public void textValueChanged(TextEvent e) {
+                String s1=t1.getText();
+
+                t2.setText(s1);
+            }
+        });
+
+         t2.setEchoChar('*');
+
+         b1=new Button("SUBMIT");
+
+
+         l1.setBounds(100,100,100,25);
+         l2.setBounds(100,150,100,25);
+
+         t1.setBounds(230,100,100,25);
+         t2.setBounds(230,150,100,25);
+         
+         b1.setBounds(100,200,80,25);
+
+         add(l1);
+         add(l2);
+         add(t1);
+         add(t2);
+         add(b1);
+
+         setSize(400,300);
+         setBackground(Color.pink);
+         setResizable(false);
+         setVisible(true);
+     }
+    public static void main(String args[]){
+        new Demo4();
+    }
+}
+========================================================================================
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
+class Demo2 extends Frame{
+    Demo2(){
+
+        setLayout(null);
+
+        addMouseMotionListener(new MouseMotionListener() {
+
+            public void mouseDragged(MouseEvent e) {
+
+                Graphics g=getGraphics();
+
+                int x=e.getX();
+                int y=e.getY();
+
+                g.drawString("Java", x, y);
+            }
+
+            public void mouseMoved(MouseEvent e) {
+                
+            }
+        });
+
+        setLocation(100,100);
+        setSize(900,400);
+        setVisible(true);
+    }
+    public static void main(String aa[]){
+        new Demo2();
+    }
+}
+========================================================================================
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
+class Demo2 extends Frame{
+    Demo2(){
+
+        setLayout(null);
+        addMouseMotionListener(new MouseMotionListener() {
+
+            public void mouseDragged(MouseEvent e) {
+
+                int x=e.getX();
+                int y=e.getY();
+
+                String msg=x+"  "+y;
+
+                setTitle(msg);
+            }
+
+            public void mouseMoved(MouseEvent e) {
+
+                int x=e.getX();
+                int y=e.getY();
+
+                getGraphics().drawString("Java", x, y);
+            }
+        });
+        setLocation(200,200);
+        setSize(300,300);
+        setVisible(true);
+    }
+    public static void main(String aa[]){
+        new Demo2();
+    }
+}
+
+========================================================================================
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.TextField;
+import java.awt.event.TextEvent;
+import java.awt.event.TextListener;
+
+class Demos extends Frame{
+    TextField t1,t2;
+    Demos(){
+        setLayout(null);
+
+        t1=new TextField();
+        t2=new TextField();
+
+        t1.addTextListener(new TextListener()
+        {
+
+            public void textValueChanged(TextEvent e) {
+              String msg=t1.getText();
+              System.out.println(msg);
+            }
+
+        });
+
+        t1.setBounds(100,100,100,30);
+        t2.setBounds(100,160,100,30);
+
+
+        add(t1);
+        add(t2);
+
+        setBounds(200,200,600,400);
+        setBackground(Color.pink);
+        setVisible(true);
+    }
+    public static void main(String args[]){
+        new Demos();
+    }
+}
+
+======================================================================================== 	
+
+/*
+  create table details(uname varchar2(15),pass varchar2(15));
+ */
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
+class GUIDemo1 extends Frame
+{
+ 	Label l1,l2;
+ 	TextField t1,t2;
+ 	Button b1;
+ 	GUIDemo1()
+ 	{
+  		setLayout(null);
+
+  		l1=new Label("Username");
+  		l2=new Label("Password");
+
+  		t1=new TextField();
+  		t2=new TextField();
+
+  		t2.setEchoChar('*');
+
+  		b1=new Button("SUBMIT");
+
+                b1.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        String uname=t1.getText();
+                        String pass=t2.getText();
+
+                        dbinsert(uname, pass);
+                    }
+                });
+
+  		l1.setBounds(100,100,100,25);
+  		l2.setBounds(100,150,100,25);
+
+  		t1.setBounds(230,100,100,25);
+  		t2.setBounds(230,150,100,25);
+
+  		b1.setBounds(100,200,80,25);
+
+  		add(l1);
+  		add(l2);
+
+  		add(t1);
+  		add(t2);
+
+  		add(b1);
+
+  		setSize(500,300);
+  		setBackground(Color.ORANGE);
+                setResizable(false);
+  		setVisible(true);
+
+ 	}
+ 	public static void main(String aa[])
+ 	{
+  		new GUIDemo1();
+ 	}
+        void dbinsert(String uname,String pass){
+
+  		try
+  		{
+   			Class.forName("oracle.jdbc.driver.OracleDriver");
+   			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","test","sql");
+   			Statement  st=con.createStatement();
+
+			String query="insert into details values('"+uname+"','"+pass+"')";
+
+   			st.executeUpdate(query);
+   			con.close();
+
+   			JOptionPane.showMessageDialog(null,"Success!");
+  		}
+  		catch(Exception e)
+  		{
+   			JOptionPane.showMessageDialog(null,"  Exception   -->"+e);
+  		}
+        }
+}

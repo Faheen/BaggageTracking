@@ -1,0 +1,373 @@
+################################################################################
+
+import java.awt.Color;
+import java.awt.Frame;
+
+class Demo1{
+    public static void main(String aa[]){
+        Frame f=new Frame();
+
+        f.setLayout(null);
+        f.setBackground(Color.BLUE);
+        f.setBounds(200,200,500,300);
+        f.setVisible(true);
+    }
+}
+################################################################################
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+
+class Demo2 extends Frame{
+    Demo2(){
+
+        setLayout(null);
+        setBackground(Color.GREEN);
+        setLocation(200,300);
+        setSize(300,300);
+        setVisible(true);
+    }
+
+
+    public static void main(String aa[]){
+        new Demo2();
+    }
+}
+################################################################################
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.TextField;
+
+class Sample extends Frame{
+
+    TextField t1,t2;
+    Sample(){
+
+        setLayout(null);
+
+        t1=new TextField();
+        t2=new TextField();
+
+        t1.setBounds(100,100,100,30);
+        t2.setBounds(230,100,100,30);
+
+        add(t1);
+        add(t2);
+
+        setBackground(Color.ORANGE);
+        setBounds(100,100,600,400);
+        setVisible(true);
+
+    }
+    public static void main(String args[]){
+        new Sample();
+    }
+}
+################################################################################
+
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+
+class Demo3 extends Frame{
+
+    Button b1,b2;
+    Demo3(){
+        setLayout(null);
+
+        b1=new Button("Click");
+        b2=new Button("Submit");
+
+        b1.setBounds(100,100,200,30);
+        b2.setBounds(100,160,200,30);
+
+        add(b1);
+        add(b2);
+
+        setBackground(Color.pink);
+        setSize(500,500);
+        setVisible(true);
+    }
+    public static void main(String aa[]){
+        new Demo3();
+    }
+}
+
+################################################################################
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+
+class Demo4 extends Frame{
+     Label l1,l2;
+     TextField t1,t2;
+     Button b1;
+     Demo4(){
+         setLayout(null);
+
+         l1=new Label("Username");
+         l2=new Label("Password");
+
+         t1=new TextField();
+         t2=new TextField();
+
+         t2.setEchoChar('*');
+
+         b1=new Button("SUBMIT");
+
+
+         l1.setBounds(100,100,100,25);
+         l2.setBounds(100,150,100,25);
+
+         t1.setBounds(230,100,100,25);
+         t2.setBounds(230,150,100,25);
+         
+         b1.setBounds(100,200,80,25);
+
+         add(l1);
+         add(l2);
+         add(t1);
+         add(t2);
+         add(b1);
+
+         setSize(400,300);
+         setBackground(Color.pink);
+         setResizable(false);
+         setVisible(true);
+     }
+    public static void main(String args[]){
+        new Demo4();
+    }
+}
+################################################################################
+
+
+import java.awt.Button;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Label;
+
+class Demo5 extends Frame{
+
+     Checkbox c1,c2,c3,c4;
+     CheckboxGroup cbg;
+     Button b1;
+     Demo5(){
+         setLayout(null);
+
+
+
+         cbg=new CheckboxGroup();
+
+         c1=new Checkbox("Car");
+         c2=new Checkbox("Bike");
+
+
+         c3=new Checkbox("Male",cbg,false);
+         c4=new Checkbox("Female",cbg,false);
+
+         b1=new Button("SUBMIT");
+
+
+
+         c1.setBounds(200,100,60,25);
+         c2.setBounds(270,100,60,25);
+
+         c3.setBounds(200,150,60,25);
+         c4.setBounds(270,150,60,25);
+
+         b1.setBounds(100,150,80,25);
+
+
+         add(c1);
+         add(c2);
+         add(c3);
+         add(c4);
+
+         add(b1);
+
+         setSize(450,250);
+
+         setResizable(false);
+         setVisible(true);
+     }
+    public static void main(String args[]){
+        new Demo5();
+    }
+}
+################################################################################
+
+import java.awt.Button;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
+import java.awt.Choice;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+class Demo6 extends Frame{
+     Label l1,l2,l3,l4,l5;
+     TextField t1,t2;
+     Checkbox c1,c2,c3;
+     CheckboxGroup cbg;
+     Choice ch1;
+     Button b1;
+     Demo6(){
+         setLayout(null);
+
+         setFont(new Font("Courier New", Font.BOLD,13));
+
+         l1=new Label("Firstname");
+         l2=new Label("Lastname");
+         l3=new Label("Gender");
+         l4=new Label("City");
+         l5=new Label("Terms");
+
+         t1=new TextField();
+         t2=new TextField();
+         
+
+         cbg=new CheckboxGroup();
+
+         c1=new Checkbox("male",cbg,false);
+         c2=new Checkbox("female",cbg,false);
+
+         ch1=new Choice();
+
+         ch1.add("select");
+         ch1.add("cbe");
+         ch1.add("chennai");
+         ch1.add("salem");
+         ch1.add("trichy");
+         ch1.add("madurai");
+
+         c3=new Checkbox("Accept");
+         
+         b1=new Button("submit");
+
+
+         l1.setBounds(100,100,120,25);
+         l2.setBounds(100,150,120,25);
+         l3.setBounds(100,200,120,25);
+         l4.setBounds(100,250,120,25);
+         l5.setBounds(100,300,120,25);
+         
+         t1.setBounds(230,100,120,25);
+         t2.setBounds(230,150,120,25);
+         c1.setBounds(230,200,60,25);
+         c2.setBounds(290,200,70,25);
+         ch1.setBounds(230,250,120,25);
+         c3.setBounds(230,300,70,25);
+         b1.setBounds(100,350,80,25);
+
+         add(l1);
+         add(l2);
+         add(l3);
+         add(l4);
+         add(l5);
+
+         add(t1);
+         add(t2);
+         add(c1);
+         add(c2);
+         add(ch1);
+         add(c3);
+         add(b1);
+
+         setSize(500,500);
+         
+         setBackground(new Color(255,222,173));
+         setResizable(false);
+         setVisible(true);
+     }
+    public static void main(String args[]){
+        new Demo6();
+    }
+}
+################################################################################
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Graphics;
+
+class Demo7 extends Frame{
+    Demo7(){
+        setLayout(null);
+        setBackground(Color.GREEN);
+        setSize(300,300);
+        setVisible(true);
+    }
+    public void paint(Graphics g){
+
+        g.setFont(new Font("verdana", Font.BOLD,20));
+        g.drawString("Hai",100,200);
+    }
+
+    public static void main(String aa[]){
+        new Demo7();
+    }
+}
+################################################################################
+
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Graphics;
+
+class Demo8 extends Frame{
+    Demo8(){
+        setLayout(null);
+        setBackground(Color.orange);
+        setSize(600,600);
+        setVisible(true);
+    }
+    public void paint(Graphics g){
+        g.drawRect(100,100,200,100);
+        g.drawOval(100,300,200,100);
+    }
+
+    public static void main(String aa[]){
+        new Demo8();
+    }
+}
+################################################################################
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+
+class Demo9 extends Frame{
+
+    Button b1;
+    
+    Demo9(){
+
+        setLayout(null);
+
+        b1=new Button("click");
+
+        b1.setBounds(100,100,200,50);
+
+        add(b1);
+        setBackground(Color.pink);
+        setSize(800,300);
+        setLocation(100,100);
+        setVisible(true);
+    }
+    public static void main(String aa[]){
+        new Demo9();
+    }
+}
+################################################################################
+
